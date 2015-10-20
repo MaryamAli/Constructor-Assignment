@@ -1,8 +1,45 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 // Constructors
 // Only add code to *THIS* section!
+'use strict';
+
 
 ///
+let Dog = function Dog(params){
+    params = params || {};
+    this.status = 'normal';
+    this.color = params.color;
+    //why does the 5th test automatically pass?
+    this.owner = params.owner;
+    this.hungry = params.hungry !== false ? true : false;
+    // or this.hungry = params.hungry === false ? false : true;
+
+
+};
+
+
+let Human = function (params){
+    params = params || {};
+    this.pet = function (x){
+        x.status = 'happy';
+    }
+    this.feed = function (y){
+        y.hungry = false;
+    }
+    
+    // for test 5? Auto passes, but why?
+    // this.owner = params.owner === true ? false: false;
+    
+    this.cool = params.cool === true ? true : false;
+    // or this.cool = params.cool !== true ? false : true;
+     
+};
+    
+
+
+
+
+
 ///
 ///
 ///
